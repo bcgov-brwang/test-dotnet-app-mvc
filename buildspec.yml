@@ -10,6 +10,7 @@ phases:
   build:
     commands:
       - cd test-dotnet-app-mvc
+      - dotnet publish
       - dotnet eb package
 artifacts:
   files:
