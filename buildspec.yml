@@ -13,6 +13,5 @@ phases:
     commands:
       - dotnet publish -c Release -o ./app/ test-dotnet-app-mvc/test-dotnet-app-mvc.csproj
 artifacts:
-  type: zip
   files:
     - '**/*'
