@@ -11,7 +11,6 @@ phases:
     commands:
       - cd test-dotnet-app-mvc
       - dotnet publish
-      - dotnet eb package
 artifacts:
   files:
     - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*
