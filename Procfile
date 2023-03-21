@@ -1,0 +1,1 @@
+web: dotnet ./app/test-dotnet-app-mvc.dll

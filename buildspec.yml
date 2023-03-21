@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+  pre_build:
+    commands:
+      - dotnet restore test-dotnet-app-mvc/test-dotnet-app-mvc.csproj
+  build:
+    commands:
+      - dotnet build test-dotnet-app-mvc/test-dotnet-app-mvc.csproj
+  post_build:
+    commands:
+      - dotnet publish -c Release -o ./app/ test-dotnet-app-mvc/test-dotnet-app-mvc.csproj
+artifacts:
+  type: zip
+  files:
+    - '**/*'
