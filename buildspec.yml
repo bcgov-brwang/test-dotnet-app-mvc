@@ -6,6 +6,7 @@ phases:
       dotnet: 3.1 
     commands:
       - dotnet tool install -g Amazon.ElasticBeanstalk.Tools
+      - dotnet restore
   build:
     commands:
       - cd test-dotnet-app-mvc
