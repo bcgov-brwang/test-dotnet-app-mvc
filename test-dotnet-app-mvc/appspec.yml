@@ -1,0 +1,25 @@
+version: 1
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+    commands:
+      - echo Installing dependencies...
+      - dotnet tool install -g Amazon.Lambda.Tools
+  build:
+    commands:
+      - echo Building the application...
+      - dotnet build
+  test:
+    commands:
+      - echo Running unit tests...
+      - dotnet test
+  deploy:
+    commands:
+      - echo Deploying to AWS Elastic Beanstalk...
+      - dotnet lambda deploy-serverless
+      - aws elasticbeanstalk update-environment --environment-name <environment-name> --version-label <version-label>
+artifacts:
+  type: zip
+  files:
+    - '**/*'
