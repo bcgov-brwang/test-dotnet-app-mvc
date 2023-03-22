@@ -13,5 +13,5 @@ phases:
       - dotnet publish -c release -o ./build_output test-dotnet-app-mvc.csproj
 artifacts:
   files:
-    - ./build_output/*
+    - ./test-dotnet-app-mvc/build_output/*
   discard-paths: yes
