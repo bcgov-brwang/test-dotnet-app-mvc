@@ -13,13 +13,5 @@ phases:
       - dotnet eb package
 artifacts:
   files:
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/css/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/img/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/js/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/lib/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/wwwroot/scss/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netcoreapp2.1/*
-    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netcoreapp2.0/*
+    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*.zip
   discard-paths: yes
