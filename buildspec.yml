@@ -13,5 +13,5 @@ phases:
       - dotnet eb package
 artifacts:
   files:
-    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/*.zip
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/*
   discard-paths: yes
