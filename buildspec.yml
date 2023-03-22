@@ -19,6 +19,14 @@ artifacts:
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/*
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/*
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/bootstrap/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/bootstrap/dist/css/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/bootstrap/dist/js/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/jquery/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/jquery/dist/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/jquery-validation/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/jquery-validation/dist/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/jquery-validation-unobtrusive/*
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/css/*
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/js/*
   discard-paths: yes
