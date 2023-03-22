@@ -10,8 +10,8 @@ phases:
   build:
     commands:
       - cd test-dotnet-app-mvc
-      - dotnet eb package
+      - dotnet publish -c release -o ./build_output test-dotnet-app-mvc.csproj
 artifacts:
   files:
-    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/*.zip
+    - ./build_output/*
   discard-paths: yes
