@@ -14,4 +14,11 @@ phases:
 artifacts:
   files:
     - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/lib/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/css/*
+    - test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/js/*
   discard-paths: yes
