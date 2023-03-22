@@ -13,6 +13,6 @@ phases:
       - dotnet eb package
 artifacts:
   files:
-    - '**/*'
-  type: zip
+    - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*
+    type: zip
   discard-paths: yes
