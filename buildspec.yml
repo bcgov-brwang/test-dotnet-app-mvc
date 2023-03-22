@@ -14,5 +14,11 @@ phases:
 artifacts:
   files:
     - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*
-  type: zip
   discard-paths: yes
+  secondary-artifacts:
+   artifact1:
+     files:
+       - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/runtimes/*
+   artifact2:
+     files:
+       - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/wwwroot/*
