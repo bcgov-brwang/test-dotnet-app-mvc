@@ -14,5 +14,5 @@ phases:
 artifacts:
   files:
     - ./test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish/*
-    type: zip
+  type: zip
   discard-paths: yes
