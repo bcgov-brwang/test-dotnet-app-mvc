@@ -15,4 +15,4 @@ artifacts:
   files:
     - '**/*'
   discard-paths: no
-  base-directory: 'test-dotnet-app-mvc/bin/Release/netcoreapp3.1'
+  base-directory: 'test-dotnet-app-mvc/bin/Release/netcoreapp3.1/publish'
