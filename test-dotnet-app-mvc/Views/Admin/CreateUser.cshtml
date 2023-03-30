@@ -1,0 +1,39 @@
+﻿@model test_dotnet_app_mvc.Models.User
+
+@{
+    ViewBag.Title = "Add New User";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.USER_DESCRIPTION)
+        @Html.TextBoxFor(model => model.USER_DESCRIPTION, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.USER_DESCRIPTION)
+    </div>
+
+   
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add User</button>
+        @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-link" })
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+
+        updateActiveNavToAdmin();
+
+    });
+</script>

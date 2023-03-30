@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>test_dotnet_app_mvc</RootNamespace>
+    <UserSecretsId>0ab4e588-c9d9-4548-ac03-b8b36b94e5c8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

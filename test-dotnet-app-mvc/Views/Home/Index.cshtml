@@ -2,8 +2,779 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Main News Slider Start -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7 px-0">
+            <div class="owl-carousel main-carousel position-relative">
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="img/news-800x500-1-test.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                               href="">當地游</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">隨當地人或當地旅遊公司的安排進行旅遊體驗，以深入了解當地文化、風俗、生活方式。</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="img/news-800x500-2-test.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                               href="">自由行</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">自己規劃行程、自主安排住宿和交通，通常不受旅行團限制，彈性和自由地享受旅遊體驗。</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="img/news-800x500-3-test.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                               href="">跟團游</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">跟隨旅行攝影師或攝影團隊的安排進行旅遊體驗，以拍攝當地風光、人文景觀。</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 px-0">
+            <div class="row mx-0">
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="img/news-700x435-1-test.jpg" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                   href="">旅游攻略</a>
+                                <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">旅行前進行的準備工作，包括目的地資訊、交通、住宿、飲食、景點等建議，旨在提供旅行的參考和指引，以更好地享受旅行體驗。</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="img/news-700x435-2-test.jpg" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                   href="">去旅行</a>
+                                <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">休閒娛樂、體驗新奇、認識世界等目的，前往外地或國外旅遊的活動。</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="img/news-700x435-3-test.jpg" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                   href="">社區</a>
+                                <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">通過社交平台、網站等互相分享旅行經驗和資訊的社區。</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="img/news-700x435-4-test.jpg" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                   href="">App</a>
+                                <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">為旅行者提供旅遊攻略、訂票、訂餐、導航等一系列旅遊相關功能的應用程式。</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>test</div>
+<!-- Main News Slider End -->
+<!-- Breaking News Start -->
+<div class="container-fluid bg-dark py-3 mb-3">
+    <div class="container">
+        <div class="row align-items-center bg-dark">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">旅游新聞</div>
+                    <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                         style="width: calc(100% - 170px); padding-right: 90px;">
+                        <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">（2月24日更新）世界各国对华免签/落地签超全指南请查收！</a></div>
+                        <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">香港与内地全面通关后旅游界盛事——2023香港国际旅游展将于6月15-18日举行</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breaking News End -->
+<!-- Featured News Slider Start -->
+<div class="container-fluid pt-5 mb-3">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="m-0 text-uppercase font-weight-bold">熱門目的地</h4>
+        </div>
+        <div class="owl-carousel place-carousel carousel-item-4 position-relative">
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/p-1.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">泰國曼谷</a>
+                        <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">食物美味、廟宇瑰麗、購物便宜、夜生活豐富</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/p-2.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">意大利羅馬</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">古老的文明古蹟、美食、浪漫的氛圍、時尚的購物</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/p-3.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">美國紐約</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">現代化的大都市、文化多樣性、購物天堂、百老匯表演。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/p-4.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">澳大利亞雪梨</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">著名的歌劇院和大橋、美麗的海灘、多樣的美食、文化活動豐富。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/p-5.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">英國倫敦</a>
+                        <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">美麗的英倫風情城市，古老的歷史，現代的風潮。</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured News Slider End -->
+<!-- Featured News Slider Start -->
+<div class="container-fluid pt-5 mb-3">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="m-0 text-uppercase font-weight-bold">热销邮轮</h4>
+        </div>
+        <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/c-1.png" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">嘉年華郵輪</a>
+                        <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">充滿活力的娛樂設施、精彩的表演和節目、豪華的設施和服務。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/c-2.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">皇家加勒比郵輪</a>
+                        <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">多元化的活動和娛樂、優質的飲食和服務、豪華的客房和設施。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/c-3.png" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">公主郵輪</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">優雅的裝潢和設計、豐富多彩的活動和節目、精美的美食和服務。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/c-4.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">諾唯真郵輪</a>
+                        <a class="text-white" href=""><small>Jan 01, 2023</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">獨特的設計和裝潢、高品質的飲食和服務、精彩的娛樂和活動。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/c-5.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">大西洋號郵輪</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">具有奢華的裝修和設施、優質的服務和餐飲、舒適的客房和各種娛樂活動。</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured News Slider End -->
+<!-- Featured News Slider Start -->
+<div class="container-fluid pt-5 mb-3">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="m-0 text-uppercase font-weight-bold">必住酒店</h4>
+        </div>
+        <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/h-1.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">布爾島亞特蘭蒂斯度假酒店</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">海洋主題裝修、私人海灘、豪華設施和活動。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/h-2.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">新加坡萊佛士酒店</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">歷史悠久的殖民風格、壯麗的建築、高品質的服務和飲食。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/h-3.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">巴黎香格里拉酒店</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">經典的法國風情、精美的裝修和設計、高品質的服務和餐飲。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/h-4.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">杜拜帆船酒店</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">獨特的帆船造型、豪華的裝修和設施、尊貴的服務和享受。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/h-5.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">紐約半島酒店</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">地理位置優越、經典的裝修風格、高品質的服務和設施。</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured News Slider End -->
+<!-- Featured News Slider Start -->
+<div class="container-fluid pt-5 mb-3">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="m-0 text-uppercase font-weight-bold">签证服务</h4>
+        </div>
+        <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/v-1.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">中青旅簽證服務</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">便捷的在線預約、專業的辦理流程、周到的客戶服務。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/v-2.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">航空公司簽證服務</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">方便的簽證申請、優惠的機票套餐、高效的辦理速度。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/v-3.png" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">新旅界簽證服務</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">全方位的簽證顧問、優質的申請服務、高效的辦理流程。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/v-4.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">香港中國旅行社簽證服務</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">專業的簽證咨詢、便捷的申請流程、優質的售后服務。</a>
+                </div>
+            </div>
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="img/v-5.jpg" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                           href="">華夏簽證服務</a>
+                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                    </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">高效的簽證申請、安全的文檔遞送、周到的客戶服務。</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured News Slider End -->
+<!-- News With Sidebar Start -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h4 class="m-0 text-uppercase font-weight-bold">私人订制</h4>
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                       href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <p class="m-0">
+                                    Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                    rebum clita rebum dolor stet amet justo
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                       href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <p class="m-0">
+                                    Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                    rebum clita rebum dolor stet amet justo
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <a href=""><img class="img-fluid w-100" src="img/ads-728x90.png" alt=""></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="img/news-700x435-3.jpg" style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                       href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="img/news-700x435-4.jpg" style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                       href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-2.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-3.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-4.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <a href=""><img class="img-fluid w-100" src="img/ads-728x90.png" alt=""></a>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row news-lg mx-0 mb-3">
+                            <div class="col-md-6 h-100 px-0">
+                                <img class="img-fluid h-100" src="img/news-700x435-5.jpg" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column border bg-white h-100 px-0">
+                                <div class="mt-auto p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                           href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">
+                                        Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo
+                                    </p>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border-top mt-auto p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-2.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-3.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-4.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Social Follow Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">社交媒体</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                            <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Fans</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
+                            <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
+                            <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Connects</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
+                            <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                            <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Subscribers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
+                            <i class="fab fa-vimeo-v text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Social Follow End -->
+                <!-- Ads Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <a href=""><img class="img-fluid" src="img/news-800x500-2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <!-- Ads End -->
+                <!-- Popular News Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-2.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-3.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-4.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="img/news-110x110-5.jpg" alt="">
+                            <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popular News End -->
+                <!-- Newsletter Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                        <div class="input-group mb-2" style="width: 100%;">
+                            <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                            </div>
+                        </div>
+                        <small>Lorem ipsum dolor sit amet elit</small>
+                    </div>
+                </div>
+                <!-- Newsletter End -->
+                <!-- Tags Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tags End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- News With Sidebar End -->
+
+
+<script>
+        $(document).ready(function () {
+
+            updateActiveNavToHome();
+
+        });
+</script>

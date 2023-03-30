@@ -18,6 +18,11 @@ namespace test_dotnet_app_mvc
         public DbSet<User> User { get; set; }
         public DbSet<Place> Place { get; set; }
 
+        public DbSet<Cruise> Cruise { get; set; }
+        public DbSet<Hotel> Hotel { get; set; }
+
+        public DbSet<Flight> Flight { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

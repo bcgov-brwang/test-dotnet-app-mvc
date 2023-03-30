@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Work\test-dotnet-app-mvc\test-dotnet-app-mvc\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2023-03-21T17:50:41.6198198Z;</History>
+    <_PublishTargetUrl>C:\work\test-dotnet-app-mvc\test-dotnet-app-mvc\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2023-03-26T06:26:50.8718976Z;True|2023-03-22T23:23:06.0870308-07:00;True|2023-03-21T23:23:15.2337158-07:00;True|2023-03-21T22:56:02.3573166-07:00;True|2023-03-21T19:57:46.3754676-07:00;True|2023-03-21T10:50:41.6198198-07:00;</History>
   </PropertyGroup>
 </Project>

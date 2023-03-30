@@ -46,6 +46,28 @@ namespace test_dotnet_app_mvc.Controllers.Service
             var result = users;
             return result;
         }
+
+        public async Task Register(User user)
+        {
+            user.USER_ID = _context.User.Select(x => x.USER_ID).OrderByDescending(x => x).FirstOrDefault() + 1;
+            _context.Add(user);
+            await _context.SaveChangesAsync();
+  
+        }
+
+
+        public async Task<bool> Login(User user)
+        {
+            bool result = false;
+            User existingUser = _context.User.Where(x => x.EMAIL == user.EMAIL && x.PASSWORD == user.PASSWORD).FirstOrDefault();
+            if (existingUser != null)
+            {
+                result = true;
+            }
+            
+            return result;
+
+        }
     }
 
 }

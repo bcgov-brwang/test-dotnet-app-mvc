@@ -38,7 +38,7 @@ namespace test_dotnet_app_mvc.Models
             //hostname = "database-1.c55myzbpex7n.us-east-1.rds.amazonaws.com";
 
             //return "Data Source=" + hostname + ";Initial Catalog=" + dbname + ";User ID=" + username + ";Password=" + password + ";";
-            return "Host=" + hostname + ";Database=" + dbname + ";Username=" + username + ";Password=" + password + ";" + ";Port=" + port + ";";
+            return "Host=" + hostname + ";Database=" + dbname + ";Username=" + username + ";Password=" + password + ";Port=" + port + ";";
         }
     }
 }

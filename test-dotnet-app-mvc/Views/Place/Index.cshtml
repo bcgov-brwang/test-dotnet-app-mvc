@@ -1,21 +1,30 @@
 ﻿@model List<Place>
 
-<div class="row">
-    @foreach (var place in Model)
-    {
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <img src="@place.IMAGEURL" class="card-img-top" alt="@place.NAME">
-                <div class="card-body">
-                    <h5 class="card-title">@place.NAME</h5>
-                    <p class="card-text">@place.DESCRIPTION</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="@Url.Action("Details", "Places", new { id = place.ID })" class="btn btn-sm btn-outline-secondary">View</a>
+    <div class="row">
+        @foreach (var place in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="@place.IMAGEURL" class="card-img-top" alt="@place.NAME">
+                    <div class="card-body">
+                        <h5 class="card-title">@place.NAME</h5>
+                        <p class="card-text">@place.DESCRIPTION</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="@Url.Action("Details", "Places", new { id = place.ID })" class="btn btn-sm btn-outline-secondary">View</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            updateActiveNavToPlace();
+
+        });
+    </script>

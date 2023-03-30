@@ -9,10 +9,12 @@ namespace test_dotnet_app_mvc.Models
     {
         public int USER_ID { get; set; }
         public string USER_DESCRIPTION { get; set; }
+
+        public string USERNAME { get; set; }
+
+        public string EMAIL { get; set; }
+
+        public string PASSWORD { get; set; }
     }
 
-    public class Flight
-    {
-        public int FlightId { get; set; }
-    }
 }

@@ -23,6 +23,11 @@ namespace test_dotnet_app_mvc.Controllers
             return View();
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

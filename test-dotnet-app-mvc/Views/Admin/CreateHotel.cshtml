@@ -1,0 +1,68 @@
+﻿@model test_dotnet_app_mvc.Models.Hotel
+
+@{
+    ViewBag.Title = "Add New Hotel";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NAME)
+        @Html.TextBoxFor(model => model.NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NAME)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DESCRIPTION)
+        @Html.TextBoxFor(model => model.DESCRIPTION, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.DESCRIPTION)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IMAGEURL)
+        @Html.TextBoxFor(model => model.IMAGEURL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IMAGEURL)
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.State)
+        @Html.TextBoxFor(model => model.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.State)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Country)
+        @Html.TextBoxFor(model => model.Country, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Country)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>*@
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Hotel</button>
+        @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-link" })
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+
+        updateActiveNavToAdmin();
+
+    });
+</script>

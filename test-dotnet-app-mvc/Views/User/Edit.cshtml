@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@model User
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>
+<h2>Update Hotel Information</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="USER_ID" />
+    <div class="form-group">
+        <label asp-for="USER_DESCRIPTION"></label>
+        <input class="form-control" asp-for="USER_DESCRIPTION" />
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+
+<script>
+    $(document).ready(function () {
+
+        updateActiveNavToHome();
+
+    });
+</script>

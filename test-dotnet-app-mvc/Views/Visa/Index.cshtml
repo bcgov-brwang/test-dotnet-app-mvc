@@ -1,0 +1,24 @@
+﻿@model List<VisaServiceModel>
+<h2>Visa Services</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var service in Model)
+        {
+            <tr>
+                <td>@service.Name</td>
+                <td>@service.Description</td>
+                <td>@service.Price.ToString("C")</td>
+                <td><img src="@service.ImageUrl"/></td>
+            </tr>
+        }
+    </tbody>
+</table>
