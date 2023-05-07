@@ -168,9 +168,33 @@ namespace test_dotnet_app_mvc.Controllers
             {
                 Product p = new Product();
                 p.NAME = product.NAME;
+                p.TYPE = product.TYPE;
+                
                 p.DESCRIPTION = product.DESCRIPTION;
-                //p.IMAGEURL = product.IMAGEURL;
+                p.AREA = product.AREA;
+                p.COUNTRY = product.COUNTRY;
+                p.GROUP_NUMBER = product.GROUP_NUMBER;
+                p.DAYS = product.DAYS;
+                p.NIGHTS = product.NIGHTS;
+                p.DEPARTURE = product.DEPARTURE;
+                p.IMAGEURLS = product.IMAGEURLS;
+                p.REASON = product.REASON;
+                p.TRANSPORTATION = product.TRANSPORTATION;
+                p.HOTEL = product.HOTEL;
+                p.MEALS = product.MEALS;
+                p.ATTRACTIONS = product.ATTRACTIONS;
+                p.GROUP_DATE = product.GROUP_DATE;
+                p.BOOK_BY_DATE = product.BOOK_BY_DATE;
+                p.ADULT_PRICE = product.ADULT_PRICE;
+                p.CHILD_PRICE = product.CHILD_PRICE;
+                p.SENIOR_PRICE = product.SENIOR_PRICE;
+                p.PRICE_INCLUSIVE = product.PRICE_INCLUSIVE;
+                p.PRICE_EXCLUSIVE = product.PRICE_EXCLUSIVE;
+                p.REFUND_CHANGE_DESCRIPTION = product.REFUND_CHANGE_DESCRIPTION;
+                p.REMARK = product.REMARK;
+                p.LEAVE_GROUP_CITY = product.LEAVE_GROUP_CITY;
                 p.ID = maxId + 1;
+                p.ORDER = p.ID;
                 _dbContext.Product.Add(p);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Manage));

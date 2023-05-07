@@ -18,13 +18,13 @@ namespace test_dotnet_app_mvc.Models
         public int DAYS { get; set; }
         public int NIGHTS { get; set; }
         public string DEPARTURE { get; set; }
-        public List<string> IMAGEURLS { get; set; }
+        public string IMAGEURLS { get; set; }
         public string REASON { get; set; }
         public string DESCRIPTION { get; set; }
         public string TRANSPORTATION { get; set; }
         public string HOTEL { get; set; }
         public string MEALS { get; set; }
-        public List<string> ATTRACTIONS { get; set; }
+        public string ATTRACTIONS { get; set; }
         public string GROUP_DATE { get; set; }
         public string BOOK_BY_DATE { get; set; }
         public int ADULT_PRICE { get; set; }

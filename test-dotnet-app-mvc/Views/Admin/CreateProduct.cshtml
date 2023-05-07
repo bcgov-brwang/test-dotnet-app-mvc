@@ -28,61 +28,61 @@
             <p class="card-text">
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.AREA)
+                    @Html.LabelFor(model => model.AREA, new { @id = "areaLabel" })
                     @Html.TextBoxFor(model => model.AREA, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.AREA)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.COUNTRY)
+                    @Html.LabelFor(model => model.COUNTRY, new { @id = "countryLabel"})
                     @Html.TextBoxFor(model => model.COUNTRY, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.COUNTRY)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.TYPE)
+                    @Html.LabelFor(model => model.TYPE, new { @id = "typeLabel" })
                     @Html.TextBoxFor(model => model.TYPE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.TYPE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.NAME)
+                    @Html.LabelFor(model => model.NAME, new { @id = "productNameLabel" })
                     @Html.TextBoxFor(model => model.NAME, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.NAME)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DAYS)
+                    @Html.LabelFor(model => model.DAYS, new { @id = "daysLabel" })
                     @Html.TextBoxFor(model => model.DAYS, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.DAYS)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.NIGHTS)
+                    @Html.LabelFor(model => model.NIGHTS, new { @id = "nightsLabel" })
                     @Html.TextBoxFor(model => model.NIGHTS, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.NIGHTS)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DEPARTURE)
+                    @Html.LabelFor(model => model.DEPARTURE, new { @id = "departureLabel" })
                     @Html.TextBoxFor(model => model.DEPARTURE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.DEPARTURE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.LEAVE_GROUP_CITY)
+                    @Html.LabelFor(model => model.LEAVE_GROUP_CITY, new { @id = "leaveGroupLabel" })
                     @Html.TextBoxFor(model => model.LEAVE_GROUP_CITY, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.LEAVE_GROUP_CITY)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.IMAGEURLS)
+                    @Html.LabelFor(model => model.IMAGEURLS, new { @id = "imageUrlsLabel" })
                     @Html.TextBoxFor(model => model.IMAGEURLS, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IMAGEURLS)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.REASON)
+                    @Html.LabelFor(model => model.REASON, new { @id = "recommendReasonLabel" })
                     @Html.TextBoxFor(model => model.REASON, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.REASON)
                 </div>
@@ -98,31 +98,31 @@
             <p class="card-text">
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DESCRIPTION)
+                    @Html.LabelFor(model => model.DESCRIPTION, new { @id = "shortDescriptionLabel" })
                     @Html.TextBoxFor(model => model.DESCRIPTION, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.DESCRIPTION)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.TRANSPORTATION)
+                    @Html.LabelFor(model => model.TRANSPORTATION, new { @id = "transportationLabel" })
                     @Html.TextBoxFor(model => model.TRANSPORTATION, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.TRANSPORTATION)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.HOTEL)
+                    @Html.LabelFor(model => model.HOTEL, new { @id = "hotelLabel" })
                     @Html.TextBoxFor(model => model.HOTEL, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.HOTEL)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MEALS)
+                    @Html.LabelFor(model => model.MEALS, new { @id = "mealsLabel" })
                     @Html.TextBoxFor(model => model.MEALS, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.MEALS)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ATTRACTIONS)
+                    @Html.LabelFor(model => model.ATTRACTIONS, new { @id = "attractionsLabel" })
                     @Html.TextBoxFor(model => model.ATTRACTIONS, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.ATTRACTIONS)
                 </div>
@@ -133,68 +133,40 @@
 
     <div class="card" id="price-inventory" hidden>
         <div class="card-body">
-            <h5 class="card-title">價格庫存</h5>
+            <h5 class="card-title">价格库存</h5>
             <p class="card-text">
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.GROUP_DATE)
+                    @Html.LabelFor(model => model.GROUP_DATE, new { @id = "groupDateLabel" })
                     @Html.TextBoxFor(model => model.GROUP_DATE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.GROUP_DATE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.BOOK_BY_DATE)
+                    @Html.LabelFor(model => model.BOOK_BY_DATE, new { @id = "bookByDateLabel" })
                     @Html.TextBoxFor(model => model.BOOK_BY_DATE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.BOOK_BY_DATE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ADULT_PRICE)
+                    @Html.LabelFor(model => model.ADULT_PRICE, new { @id = "adultPriceLabel" })
                     @Html.TextBoxFor(model => model.ADULT_PRICE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.ADULT_PRICE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.CHILD_PRICE)
+                    @Html.LabelFor(model => model.CHILD_PRICE, new { @id = "childPriceLabel" })
                     @Html.TextBoxFor(model => model.CHILD_PRICE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.CHILD_PRICE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.SENIOR_PRICE)
+                    @Html.LabelFor(model => model.SENIOR_PRICE, new { @id = "seniorPriceLabel" })
                     @Html.TextBoxFor(model => model.SENIOR_PRICE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.SENIOR_PRICE)
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NIGHTS)
-                    @Html.TextBoxFor(model => model.NIGHTS, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.NIGHTS)
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DEPARTURE)
-                    @Html.TextBoxFor(model => model.DEPARTURE, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.DEPARTURE)
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.LEAVE_GROUP_CITY)
-                    @Html.TextBoxFor(model => model.LEAVE_GROUP_CITY, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.LEAVE_GROUP_CITY)
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.IMAGEURLS)
-                    @Html.TextBoxFor(model => model.IMAGEURLS, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.IMAGEURLS)
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.REASON)
-                    @Html.TextBoxFor(model => model.REASON, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.REASON)
-                </div>
+                
             </p>
 
         </div>
@@ -206,25 +178,25 @@
             <p class="card-text">
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.PRICE_INCLUSIVE)
+                    @Html.LabelFor(model => model.PRICE_INCLUSIVE, new { @id = "priceInclusiveLabel" })
                     @Html.TextBoxFor(model => model.PRICE_INCLUSIVE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.PRICE_INCLUSIVE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.PRICE_EXCLUSIVE)
+                    @Html.LabelFor(model => model.PRICE_EXCLUSIVE, new { @id = "priceExclusiveLabel" })
                     @Html.TextBoxFor(model => model.PRICE_EXCLUSIVE, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.PRICE_EXCLUSIVE)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.REFUND_CHANGE_DESCRIPTION)
+                    @Html.LabelFor(model => model.REFUND_CHANGE_DESCRIPTION, new { @id = "refundChangeDescriptionLabel" })
                     @Html.TextBoxFor(model => model.REFUND_CHANGE_DESCRIPTION, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.REFUND_CHANGE_DESCRIPTION)
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.REMARK)
+                    @Html.LabelFor(model => model.REMARK, new { @id = "remarkLabel" })
                     @Html.TextBoxFor(model => model.REMARK, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.REMARK)
                 </div>
@@ -237,10 +209,10 @@
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">保存</button>
-        <button class="btn btn-primary" id="continueBtn">继续</button>
-        <button class="btn btn-primary" id="backBtn">返回</button>
+        <button class="btn btn-primary" id="continueBtn">下一步</button>
+        <button class="btn btn-primary" id="backBtn">上一步</button>
 
-        @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-link" })
+        @Html.ActionLink("清空退出", "Index", "Home", null, new { @class = "btn btn-link" })
     </div>
 }
 
@@ -249,6 +221,8 @@
     $(document).ready(function () {
 
         updateActiveNavToAdmin();
+
+        createProductInit();
 
         document.getElementById("continueBtn").addEventListener("click", function (event) {
             continueBtnClicked(event);
