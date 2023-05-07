@@ -5,11 +5,11 @@
 
 }
 
-<head>
+@*<head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
+</head>*@
 
 <div class="container">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -17,13 +17,16 @@
             <a class="nav-link" id="hotels-tab" data-toggle="tab" href="#hotels" role="tab" aria-controls="hotels" aria-selected="true">Hotels</a>
         </li>
         <li class="nav-item" id="Tab2">
-            <a class="nav-link" id="flights-tab" data-toggle="tab" href="#flights" role="tab" aria-controls="flights" aria-selected="false">Flights</a>
+            <a class="nav-link" id="places-tab" data-toggle="tab" href="#places" role="tab" aria-controls="places" aria-selected="false">Destinations</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="cruises-tab" data-toggle="tab" href="#cruises" role="tab" aria-controls="cruises" aria-selected="false">Cruises</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="products-tab" data-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">产品管理</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -67,34 +70,34 @@
                 </table>
             </div>
         </div>
-        <div class="tab-pane fade" id="flights" role="tabpanel" aria-labelledby="flights-tab">
+        <div class="tab-pane fade" id="places" role="tabpanel" aria-labelledby="places-tab">
             <!-- content for flights tab goes here -->
             <div class="container">
                 <p>
-                    <a asp-action="CreateFlight">Add Flight</a>
+                    <a asp-action="CreatePlace">Add Place</a>
                 </p>
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Flight Name</th>
+                            <th>Name</th>
                             <th>Description</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var flight in Model.Flights)
+                        @foreach (var place in Model.Places)
                         {
                             <tr>
-                                <td>@flight.ID</td>
-                                <td>@flight.NAME</td>
-                                <td>@flight.DESCRIPTION</td>
+                                <td>@place.ID</td>
+                                <td>@place.NAME</td>
+                                <td>@place.DESCRIPTION</td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@flight.ID">Edit</a>
+                                    <a asp-action="Edit" asp-route-id="@place.ID">Edit</a>
                                 </td>
                                 <td>
-                                    <form asp-action="Delete" asp-route-id="@flight.ID" method="post">
+                                    <form asp-action="Delete" asp-route-id="@place.ID" method="post">
                                         <button type="submit">Delete</button>
                                     </form>
                                 </td>
@@ -162,15 +165,55 @@
                         @foreach (var user in Model.Users)
                         {
                             <tr>
-                                <td>@user.USER_ID</td>
-                                
-                                <td>@user.USER_DESCRIPTION</td>
+                                <td>@user.ID</td>
+
+                                <td>@user.DESCRIPTION</td>
                                 <td>
-                                    <a asp-controller="User" asp-action="Edit" asp-route-id="@user.USER_ID">Edit</a>
+                                    <a asp-controller="User" asp-action="Edit" asp-route-id="@user.ID">Edit</a>
                                 </td>
                                 <td>
-                                    <form asp-controller="User" asp-action="Delete" asp-route-id="@user.USER_ID" method="post">
+                                    <form asp-controller="User" asp-action="Delete" asp-route-id="@user.ID" method="post">
                                         <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+            <!-- content for cruises tab goes here -->
+            <div class="container">
+                <p>
+                    <a asp-action="CreateProduct">添加新产品</a>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th>名稱</th>
+                            <th>類型</th>
+                            <th>排序</th>
+                            <th>編輯</th>
+                            <th>刪除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td>@product.ID</td>
+                                <td>@product.NAME</td>
+                                <td>@product.TYPE</td>
+                                <td>@product.ORDER</td>
+                                <td>
+                                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.ID">編輯</a>
+                                </td>
+                                <td>
+                                    <form asp-controller="Product" asp-action="Delete" asp-route-id="@product.ID" method="post">
+                                        <button type="submit">刪除</button>
                                     </form>
                                 </td>
                             </tr>

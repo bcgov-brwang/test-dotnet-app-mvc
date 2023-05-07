@@ -49,7 +49,7 @@ namespace test_dotnet_app_mvc.Controllers
             }
 
             var user = await _context.User
-                .FirstOrDefaultAsync(m => m.USER_ID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (user == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace test_dotnet_app_mvc.Controllers
 
         public ActionResult Detail(int id)
         {
-            var user = _context.User.ToList().Where(x => x.USER_ID == id).FirstOrDefault();
+            var user = _context.User.ToList().Where(x => x.ID == id).FirstOrDefault();
             return View(user);
         }
 
@@ -106,9 +106,22 @@ namespace test_dotnet_app_mvc.Controllers
             {
                 // TODO: Login user logic
                 UserService us = new UserService(_context);
-                bool isUser = await us.Login(user);
+                var existingUser = await us.Login(user);
+                bool isUser = (existingUser != null)? true: false;
                 if (isUser)
                 {
+                    UserRole ur = _context.UserRole.Where(x => x.USER_ID == existingUser.ID).FirstOrDefault();
+                    if (ur.ROLE_ID == 1)
+                    {
+                        ViewBag.IsAdmin = true;
+                    }
+                    else
+                    {
+                        ViewBag.IsAdmin = false;
+                    }
+                     
+                    ViewBag.UserName = existingUser.USERNAME;
+                    HomeController.UserId = existingUser.ID;
                     return RedirectToAction("Index", "Home");
 
                 }
@@ -118,9 +131,15 @@ namespace test_dotnet_app_mvc.Controllers
                 }
                 
             }
-
-            return View(user);
+            return RedirectToAction("Nonuser", "User");
+         
         }
 
+        public IActionResult Logout()
+        {
+            ViewBag.UserName = null;
+            HomeController.UserId = 0;
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

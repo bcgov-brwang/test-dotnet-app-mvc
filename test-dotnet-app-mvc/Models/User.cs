@@ -7,8 +7,8 @@ namespace test_dotnet_app_mvc.Models
 {
     public class User
     {
-        public int USER_ID { get; set; }
-        public string USER_DESCRIPTION { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPTION { get; set; }
 
         public string USERNAME { get; set; }
 

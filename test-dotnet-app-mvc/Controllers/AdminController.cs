@@ -24,6 +24,11 @@ namespace test_dotnet_app_mvc.Controllers
             return View();
         }
 
+        public IActionResult CreatePlace()
+        {
+            return View();
+        }
+
         public IActionResult CreateFlight()
         {
             return View();
@@ -39,6 +44,10 @@ namespace test_dotnet_app_mvc.Controllers
             return View();
         }
 
+        public IActionResult CreateProduct()
+        {
+            return View();
+        }
         // POST: Admin/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -64,10 +73,44 @@ namespace test_dotnet_app_mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateFlight([Bind("Id,Name,Description")] Flight flight)
+        public async Task<IActionResult> CreatePlace([FromForm] Place place)
         {
+
+            
+            int maxId = _dbContext.Place.ToList().Select(x => x.ID).OrderByDescending(x => x).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
+                Place h = new Place();
+                h.NAME = place.NAME;
+                h.DESCRIPTION = place.DESCRIPTION;
+                h.IMAGEURL = place.IMAGEURL;
+                h.ID = maxId + 1;
+                _dbContext.Place.Add(h);
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Manage));
+            }
+            return View(place);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateFlight([Bind("NAME, DESCRIPTION, IMAGEURL")] Flight flight)
+        {
+            int id = 0;
+            var existingFlight = _dbContext.Flight.OrderByDescending(x => x.ID).FirstOrDefault();
+            if (existingFlight == null)
+            {
+                id = 1;
+            }
+            else
+            {
+                id = existingFlight.ID + 1;
+            }
+            if (ModelState.IsValid)
+            {
+                flight.ID = id;
                 _dbContext.Add(flight);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -77,30 +120,64 @@ namespace test_dotnet_app_mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateCruise([Bind("Id,Name,Description")] Cruise cruise)
+        public async Task<IActionResult> CreateCruise([Bind("NAME,DESCRIPTION, IMAGEURL")] Cruise cruise)
         {
+            int id = 0;
+            var existingCruise = _dbContext.Cruise.OrderByDescending(x => x.ID).FirstOrDefault();
+            if (existingCruise == null)
+            {
+                id = 1;
+            }
+            else
+            {
+                id = existingCruise.ID + 1;
+            }
             if (ModelState.IsValid)
             {
+                cruise.ID = id;
                 _dbContext.Add(cruise);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(cruise);
+            return View("Manage");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateUser([Bind("USER_ID,USER_DESCRIPTION")] User user)
+        public async Task<IActionResult> CreateUser([Bind("ID,DESCRIPTION")] User user)
         {
             if (ModelState.IsValid)
             {
-                user.USER_ID = _dbContext.User.Select(x => x.USER_ID).OrderByDescending(x => x).FirstOrDefault() + 1;
+                user.ID = _dbContext.User.Select(x => x.ID).OrderByDescending(x => x).FirstOrDefault() + 1;
                 _dbContext.Add(user);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Manage));
             }
             return View(user);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateProduct([FromForm] Product product)
+        {
+
+            ProductService ps = new ProductService(_dbContext);
+            int maxId = ps.GetProducts().Result.Value.ToList().Select(x => x.ID).OrderByDescending(x => x).FirstOrDefault();
+
+            if (ModelState.IsValid)
+            {
+                Product p = new Product();
+                p.NAME = product.NAME;
+                p.DESCRIPTION = product.DESCRIPTION;
+                //p.IMAGEURL = product.IMAGEURL;
+                p.ID = maxId + 1;
+                _dbContext.Product.Add(p);
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Manage));
+            }
+            return View(product);
+        }
+
 
         public IActionResult Manage()
         {
@@ -160,16 +237,36 @@ namespace test_dotnet_app_mvc.Controllers
             foreach (var c in resultUsers.Result.Value)
             {
                 User user = new User();
-                user.USER_ID = c.USER_ID;
-                user.USER_DESCRIPTION = user.USER_DESCRIPTION;
+                user.ID = c.ID;
+                user.DESCRIPTION = user.DESCRIPTION;
                 
                 users.Add(user);
+            }
+
+            ProductService ps = new ProductService(_dbContext);
+            var resultProducts = ps.GetProducts();
+
+            var products = new List<Product>();
+            foreach (var p in resultProducts.Result.Value)
+            {
+                Product product = new Product();
+                product.ID = p.ID;
+                product.DESCRIPTION = product.DESCRIPTION;
+                product.TYPE = p.TYPE;
+                product.ORDER = p.ORDER;
+
+                products.Add(product);
             }
 
             allInfor.Hotels = hotels;
             allInfor.Flights = flights;
             allInfor.Cruises = cruises;
             allInfor.Users = users;
+            allInfor.Products = products;
+
+            var places = _dbContext.Place.ToList();
+            allInfor.Places = places;
+
             return View(allInfor);
             
         }

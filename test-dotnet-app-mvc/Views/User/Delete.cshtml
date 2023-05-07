@@ -5,11 +5,11 @@
     ViewData["Title"] = "Delete User";
 }
 
-<head>
+@*<head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
+</head>*@
 <h2>Delete User Information</h2>
 
 <h3>Are you sure you want to delete this hotel?</h3>
@@ -18,16 +18,16 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.USER_DESCRIPTION)
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.USER_DESCRIPTION)
+            @Html.DisplayFor(model => model.DESCRIPTION)
         </dd>
     </dl>
 </div>
 
 <div>
-    @using (Html.BeginForm("Delete", "Hotel", new { id = Model.USER_ID }, FormMethod.Post))
+    @using (Html.BeginForm("Delete", "Hotel", new { id = Model.ID }, FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 

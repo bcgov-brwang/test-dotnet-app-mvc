@@ -16,6 +16,10 @@ namespace test_dotnet_app_mvc
         }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<Role> Role { get; set; }
+
+        public DbSet<UserRole> UserRole { get; set; }
         public DbSet<Place> Place { get; set; }
 
         public DbSet<Cruise> Cruise { get; set; }
@@ -23,10 +27,12 @@ namespace test_dotnet_app_mvc
 
         public DbSet<Flight> Flight { get; set; }
 
+        public DbSet<Product> Product { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .HasKey(u => u.USER_ID);
+                .HasKey(u => u.ID);
 
             modelBuilder.Entity<Place>()
                 .HasKey(p => p.ID);

@@ -47,22 +47,62 @@ namespace test_dotnet_app_mvc.Controllers.Service
             return result;
         }
 
+        public async Task<ActionResult<User>> GetUser(int id)
+        {
+            User user = null;
+
+            try
+            {
+                user = _context.User.ToList().Where(x => x.ID == id).FirstOrDefault();
+
+            }
+            catch (Exception exc)
+            {
+                string t = exc.Message;
+
+            }
+
+            return user;
+        }
+
+
         public async Task Register(User user)
         {
-            user.USER_ID = _context.User.Select(x => x.USER_ID).OrderByDescending(x => x).FirstOrDefault() + 1;
+            user.ID = _context.User.Select(x => x.ID).OrderByDescending(x => x).FirstOrDefault() + 1;
             _context.Add(user);
+
+            
+            var ur = _context.UserRole.OrderByDescending(x => x.ID).FirstOrDefault();
+            if (ur == null)
+            {
+                ur = new UserRole();
+                ur.USER_ID = user.ID;
+                ur.ROLE_ID = 1;
+                ur.ID = 1;
+            }
+            else
+            {
+                var newUserRole = new UserRole();
+                newUserRole.ID = ur.ID + 1;
+                newUserRole.USER_ID = user.ID;
+                newUserRole.ROLE_ID = 2;
+                ur = newUserRole;
+                
+            }
+            _context.Add(ur);
+
             await _context.SaveChangesAsync();
   
         }
 
 
-        public async Task<bool> Login(User user)
+        public async Task<User> Login(User user)
         {
-            bool result = false;
+            User result = null;
             User existingUser = _context.User.Where(x => x.EMAIL == user.EMAIL && x.PASSWORD == user.PASSWORD).FirstOrDefault();
             if (existingUser != null)
             {
-                result = true;
+                result = existingUser;
             }
             
             return result;

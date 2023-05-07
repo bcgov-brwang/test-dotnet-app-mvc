@@ -5,6 +5,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\work\test-dotnet-app-mvc\test-dotnet-app-mvc\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+<<<<<<< HEAD
+    <History>True|2023-04-04T06:00:01.7148823Z;True|2023-03-25T23:26:50.8718976-07:00;True|2023-03-22T23:23:06.0870308-07:00;True|2023-03-21T23:23:15.2337158-07:00;True|2023-03-21T22:56:02.3573166-07:00;True|2023-03-21T19:57:46.3754676-07:00;True|2023-03-21T10:50:41.6198198-07:00;</History>
+=======
     <History>True|2023-03-26T06:26:50.8718976Z;True|2023-03-22T23:23:06.0870308-07:00;True|2023-03-21T23:23:15.2337158-07:00;True|2023-03-21T22:56:02.3573166-07:00;True|2023-03-21T19:57:46.3754676-07:00;True|2023-03-21T10:50:41.6198198-07:00;</History>
+>>>>>>> 9d567ec58ff5c744a8e9743eb26f386376ef68af
   </PropertyGroup>
 </Project>

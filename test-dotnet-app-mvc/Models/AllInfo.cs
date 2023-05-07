@@ -11,6 +11,9 @@ namespace test_dotnet_app_mvc.Models
         public List<Hotel> Hotels { get; set; }
         public List<Flight> Flights { get; set; }
 
+        public List<Place> Places { get; set; }
+
         public List<User> Users { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

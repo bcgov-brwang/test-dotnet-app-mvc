@@ -1,5 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+@{ 
+
+//User test = Model;
+//string s = test.USERNAME;
+
+}
+
+
 <head>
     <meta charset="utf-8">
     <title>Aeroswan - Best Travel Guide</title>
@@ -20,15 +27,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/my.js"></script>
-
-
-    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">*@
+    <script src="~/js/my.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -45,21 +47,48 @@
                         <li class="nav-item border-right border-secondary">
                             <a class="nav-link text-body small" href="#"><p id="date"></p></a>
                         </li>
-                        <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">广告</a>
-                        </li>
-                        <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">管理</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body small" href="#">登录</a>
-                        </li>
+                        @{
+                            if (ViewBag.UserName == null)
+                            {
+                                <li class="nav-item border-right border-secondary">
+                                    <a class="nav-link text-body small" asp-area="" asp-controller="User" asp-action="Register">注册</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-body small" asp-area="" asp-controller="User" asp-action="Login">登录</a>
+                                </li>
+
+                            }
+                        }
+
+                        @{
+                            if (ViewBag.UserName != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-body small" asp-area="" asp-controller="User" asp-action="Logout">注销</a>
+                                </li>
+                            }
+                        }
+
+
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3 text-right d-none d-md-block">
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-auto mr-n2">
+
+                        <li class="nav-item">@ViewBag.UserName</li>
+                        <li class="nav-item">
+                            
+                            @{
+                                if (ViewBag.UserName != null)
+                                {
+                                    <a class="nav-link text-body" href="#"><small class="far fa-user"></small></a>
+                                }
+                            }
+
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
                         </li>
@@ -108,23 +137,23 @@
                 <div class="navbar-nav mr-auto py-0">
                     <a id="navHome" class="nav-link nav-item active" asp-area="" asp-controller="Home" asp-action="Index">首页</a>
                     <a id="navPlace" class="nav-link nav-item" asp-area="" asp-controller="Place" asp-action="Index">目的地</a>
-                    <a id="navGuide" class="nav-link nav-item" asp-area="" asp-controller="Guide" asp-action="Index">旅游攻略</a>
                     <a id="navTravel" class="nav-link nav-item" asp-area="" asp-controller="Cruise" asp-action="Index">邮轮</a>
-                    <a id="navFlight" class="nav-link nav-item" asp-area="" asp-controller="Flight" asp-action="Search">机票</a>
                     <a id="navHotel" class="nav-link nav-item" asp-area="" asp-controller="Hotel" asp-action="Index">酒店</a>
-                    <a class="nav-link nav-item" asp-area="" asp-controller="User" asp-action="Login">登录</a>
-                    <a class="nav-link nav-item" asp-area="" asp-controller="User" asp-action="Register">注册</a>
-                    @*<div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">用户</a>
-            <div class="dropdown-menu rounded-0 m-0">
-                <a asp-controller="User" asp-action="Login">登录</a>
-                <a asp-controller="User" asp-action="Register">注册</a>
-            </div>
-        </div>*@
-                    @*<a href="single.html" class="nav-item nav-link" asp-controller="Account" asp-action="Index">帐户</a>*@
+                    <a id="navFlight" class="nav-link nav-item" asp-area="" asp-controller="Flight" asp-action="Search">机票</a>
+                    <a id="navGuide" class="nav-link nav-item" asp-area="" asp-controller="Guide" asp-action="Index">旅游攻略</a>
                     <a id="navContact" class="nav-link nav-item" asp-area="" asp-controller="Visa" asp-action="Index">签证服务</a>
                     <a id="navContact" class="nav-link nav-item" asp-area="" asp-controller="Customize" asp-action="Index">私人定制</a>
-                    <a id="navAdmin" class="nav-link nav-item" asp-area="" asp-controller="Admin" asp-action="Manage">管理</a>
+
+                    @{
+                        if ((ViewBag.IsAdmin != null) && (ViewBag.IsAdmin != false))
+                        {
+                            <a id="navAdmin" class="nav-link nav-item" asp-area="" asp-controller="Admin" asp-action="Manage">管理</a>
+
+
+                        }
+                    }
+
+
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
@@ -132,6 +161,10 @@
                         <button class="input-group-text bg-primary text-dark border-0 px-3">
                             <i class="fa fa-search"></i>
                         </button>
+                        @*<div class="account-icon">
+                            <i class="fa fa-user"></i>
+                            <span>@Model.USERNAME</span>
+                        </div>*@
                     </div>
                 </div>
             </div>

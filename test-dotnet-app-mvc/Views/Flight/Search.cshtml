@@ -1,66 +1,15 @@
-﻿@*@model FlightSearchViewModel
-
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </head>
-
-    <h2>Flight Information Search</h2>
-
-    <form asp-action="Search" method="get">
-        <div class="form-group">
-            <label for="searchInput">Search by Destination or Flight Number:</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="searchInput" name="searchTerm" value="@Model.SearchTerm" />
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    @{
-        if (Model.Flights != null)
-        {
-            @if (Model.Flights.Count > 0)
-            {
-                <h3>Search Results:</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Flight Number</th>
-                            <th>Destination</th>
-                            <th>Departure Time</th>
-                            <th>Arrival Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var flight in Model.Flights)
-                        {
-                            <tr>
-                                <td>@flight.FlightNumber</td>
-                                <td>@flight.Destination</td>
-                                <td>@flight.DepartureTime.ToString("yyyy-MM-dd HH:mm")</td>
-                                <td>@flight.ArrivalTime.ToString("yyyy-MM-dd HH:mm")</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-
-
-        }
-    }*@
-
+﻿
 
 
 @model List<Flight>
 
-    <head>
+    @*<head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </head>
+    </head>*@
+
+
 
     <h2>Search Flights</h2>
 

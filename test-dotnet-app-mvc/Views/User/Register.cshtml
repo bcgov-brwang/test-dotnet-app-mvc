@@ -4,22 +4,27 @@
 
 
 @model User
-<head>
+@*<head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
+</head>*@
 
 <h2>Register</h2>
 
 <form asp-action="Register" method="post">
     <div class="form-group">
-        <label>Email</label>
+        <label>用户名</label>
+        <input type="text" asp-for="USERNAME" class="form-control" />
+        <span asp-validation-for="USERNAME" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>邮箱</label>
         <input type="email" asp-for="EMAIL" class="form-control" />
         <span asp-validation-for="EMAIL" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Password</label>
+        <label>密码</label>
         <input type="password" asp-for="PASSWORD" class="form-control" />
         <span asp-validation-for="PASSWORD" class="text-danger"></span>
     </div>
