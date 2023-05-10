@@ -36,6 +36,10 @@ namespace test_dotnet_app_mvc.Models
         public string REMARK { get; set; }
         public string LEAVE_GROUP_CITY { get; set; }
 
+        public int PRODUCT_TYPE { get; set; }
+        public bool IS_ON_HOMEPAGE { get; set; }
+        public bool IS_RECOMMENDED { get; set; }
+
 
 
         //public int PRICE { get; set; }
