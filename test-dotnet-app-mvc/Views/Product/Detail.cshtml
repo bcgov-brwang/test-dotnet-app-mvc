@@ -1,0 +1,46 @@
+﻿@model Product
+    @*<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>*@
+    <h2>@Html.DisplayFor(model => model.NAME)</h2>
+
+    <div>
+        <h4>Product Details</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NAME)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NAME)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DESCRIPTION)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DESCRIPTION)
+            </dd>
+            <dd class="col-sm-10">
+                @{
+                    List<string> tempList = Model.IMAGEURLS.Split(';').ToList();
+                    foreach (var image in tempList)
+                    {
+                        <img src="@image" />
+                    }
+                }
+
+            </dd>
+         
+        </dl>
+    </div>
+
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

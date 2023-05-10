@@ -12,27 +12,148 @@
 <h2>编辑产品信息</h2>
 
 <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="ID" />
-    <div class="form-group">
-        <label asp-for="NAME">产品名称</label>
-        <input class="form-control" asp-for="NAME" />
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">基本信息</h5>
+            <p class="card-text">
+                <div class="container">
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-group">
+                        <label asp-for="NAME">产品名称</label>
+                        <input class="form-control" asp-for="NAME" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DESCRIPTION">简短描述</label>
+                        <input class="form-control" asp-for="DESCRIPTION" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AREA">地区</label>
+                        <input class="form-control" asp-for="AREA" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="COUNTRY">国家</label>
+                        <input class="form-control" asp-for="COUNTRY" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IMAGEURLS">产品图片</label>
+                        <input class="form-control" asp-for="IMAGEURLS" />
+                        @{
+                            List<string> tempList = Model.IMAGEURLS.Split(';').ToList();
+                            foreach (var image in tempList)
+                            {
+                                <img src="@image" />
+                            }
+                        }
+
+                        <input type="file" name="imageFile" class="form-control" />
+                    </div>
+                </div>
+
+            </p>
+        </div>
+
     </div>
-    <div class="form-group">
-        <label asp-for="DESCRIPTION">简短描述</label>
-        <input class="form-control" asp-for="DESCRIPTION" />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">行程安排</h5>
+            <p class="card-text">
+                <div class="container">
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-group">
+                        <label asp-for="DESCRIPTION">简短描述</label>
+                        <input class="form-control" asp-for="DESCRIPTION" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TRANSPORTATION">交通</label>
+                        <input class="form-control" asp-for="TRANSPORTATION" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="HOTEL">酒店</label>
+                        <input class="form-control" asp-for="HOTEL" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MEALS">餐饮</label>
+                        <input class="form-control" asp-for="MEALS" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ATTRACTIONS">包含景点</label>
+                        <input class="form-control" asp-for="ATTRACTIONS" />
+                    </div>
+                </div>
+
+            </p>
+        </div>
+
     </div>
-    <div class="form-group">
-        <label asp-for="AREA">地区</label>
-        <input class="form-control" asp-for="AREA" />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">价格库存</h5>
+            <p class="card-text">
+                <div class="container">
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-group">
+                        <label asp-for="GROUP_DATE">团期</label>
+                        <input class="form-control" asp-for="GROUP_DATE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BOOK_BY_DATE">预定截止</label>
+                        <input class="form-control" asp-for="BOOK_BY_DATE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ADULT_PRICE">成人价</label>
+                        <input class="form-control" asp-for="ADULT_PRICE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CHILD_PRICE">儿童价</label>
+                        <input class="form-control" asp-for="CHILD_PRICE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SENIOR_PRICE">老人价</label>
+                        <input class="form-control" asp-for="SENIOR_PRICE" />
+                    </div>
+                </div>
+
+            </p>
+        </div>
+
     </div>
-    <div class="form-group">
-        <label asp-for="COUNTRY">国家</label>
-        <input class="form-control" asp-for="COUNTRY" />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">注意事項</h5>
+            <p class="card-text">
+                <div class="container">
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-group">
+                        <label asp-for="PRICE_INCLUSIVE">价格包含</label>
+                        <input class="form-control" asp-for="PRICE_INCLUSIVE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PRICE_EXCLUSIVE">价格不含</label>
+                        <input class="form-control" asp-for="PRICE_EXCLUSIVE" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="REFUND_CHANGE_DESCRIPTION">退款改期说明</label>
+                        <input class="form-control" asp-for="REFUND_CHANGE_DESCRIPTION" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="REMARK">注意事项</label>
+                        <input class="form-control" asp-for="REMARK" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SENIOR_PRICE">老人价</label>
+                        <input class="form-control" asp-for="SENIOR_PRICE" />
+                    </div>
+                </div>
+
+            </p>
+        </div>
+
     </div>
-    <div class="form-group">
-        <label asp-for="IMAGEURLS">产品图片</label>
-        <input class="form-control" asp-for="IMAGEURLS" />
-    </div>
+
+
 
 
     <button type="submit" class="btn btn-primary">更新</button>

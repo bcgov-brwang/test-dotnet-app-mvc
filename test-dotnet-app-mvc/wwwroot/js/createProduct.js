@@ -28,9 +28,13 @@
     $("#priceExclusiveLabel").html("价格不含");
     $("#refundChangeDescriptionLabel").html("退款改期说明");
     $("#remarkLabel").html("注意事项");
- 
 
-    
+    $(function () {
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+    });
+ 
 }
 
 const continueBtnClicked = (event) => {
@@ -59,6 +63,7 @@ const continueBtnClicked = (event) => {
         $("#notices").attr("hidden", false);
         $("#continueBtn").attr("disabled", true);
         $("#backBtn").attr("disabled", false);
+        $("#saveBtn").attr("disabled", false);
     }
 
     
@@ -95,5 +100,6 @@ const backBtnClicked = (event) => {
         $("#notices").attr("hidden", true);
         $("#backBtn").attr("disabled", false);
         $("#continueBtn").attr("disabled", false);
+        $("#saveBtn").attr("disabled", true);
     }
 }

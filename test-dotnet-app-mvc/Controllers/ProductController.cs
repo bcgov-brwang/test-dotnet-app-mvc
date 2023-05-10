@@ -19,25 +19,32 @@ namespace test_dotnet_app_mvc.Controllers
 
 
         }
-        //public IActionResult Index()
-        //{
-        //    HotelService cs = new HotelService(_context);
-        //    var result = cs.GetHotels();
+        public IActionResult Index()
+        {
+            ProductService ps = new ProductService(_context);
+            var result = ps.GetProducts();
 
-        //    var hotels = new List<Hotel>();
-        //    foreach (var p in result.Result.Value)
-        //    {
-        //        Hotel hotel = new Hotel();
-        //        hotel.ID = p.ID;
-        //        hotel.NAME = p.NAME;
-        //        hotel.DESCRIPTION = p.DESCRIPTION;
-        //        hotel.IMAGEURL = p.IMAGEURL;
-        //        //hotel.PRICE = p.PRICE;
-        //        hotels.Add(hotel);
-        //    }
+            var products = new List<Product>();
+            foreach (var p in result.Result.Value)
+            {
+                Product product = new Product();
+                product.ID = p.ID;
+                product.NAME = p.NAME;
+                product.DESCRIPTION = p.DESCRIPTION;
+                product.IMAGEURLS = p.IMAGEURLS;
+                //hotel.PRICE = p.PRICE;
+                products.Add(product);
+            }
 
-        //    return View(hotels);
-        //}
+            return View(products);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            var product = _context.Product.ToList().Where(x => x.ID == id).FirstOrDefault();
+            return View(product);
+        }
+
 
 
         public IActionResult Edit(int id)

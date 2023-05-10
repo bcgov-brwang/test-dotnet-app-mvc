@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using test_dotnet_app_mvc.Controllers.Service;
 using test_dotnet_app_mvc.Models;
 using System.Linq;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace test_dotnet_app_mvc.Controllers
 {
@@ -158,8 +160,48 @@ namespace test_dotnet_app_mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateProduct([FromForm] Product product)
+        public async Task<IActionResult> CreateProduct([FromForm] Product product, [FromForm] IEnumerable<IFormFile> images)
         {
+
+            if (images != null && images.Count() > 0)
+            {
+                var imageUrls = new List<string>();
+                var fileName = "";
+                foreach (var image in images)
+                {
+                    if (image.Length > 0)
+                    {
+                        fileName = Path.GetFileName(image.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            image.CopyTo(fileStream);
+                        }
+                        imageUrls.Add($"/upload/{fileName}");
+                    }
+                    product.IMAGEURLS += $"/upload/{fileName}";
+                    product.IMAGEURLS += ";";
+                }
+                
+                   
+            }
+
+
+            //if (imageFile != null && imageFile.Length > 0)
+            //{
+            //    // get the file name
+            //    string fileName = Path.GetFileName(imageFile.FileName);
+
+            //    // save the file to the server
+            //    string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", fileName);
+            //    using (var stream = new FileStream(path, FileMode.Create))
+            //    {
+            //        await imageFile.CopyToAsync(stream);
+            //    }
+            //    ViewBag.url = path;
+            //    // redirect back to the index action
+            //    return RedirectToAction("CreateProduct", "Admin");
+            //}
 
             ProductService ps = new ProductService(_dbContext);
             int maxId = ps.GetProducts().Result.Value.ToList().Select(x => x.ID).OrderByDescending(x => x).FirstOrDefault();
@@ -195,11 +237,12 @@ namespace test_dotnet_app_mvc.Controllers
                 p.LEAVE_GROUP_CITY = product.LEAVE_GROUP_CITY;
                 p.ID = maxId + 1;
                 p.ORDER = p.ID;
+                p.IMAGEURLS = product.IMAGEURLS;
                 _dbContext.Product.Add(p);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Manage));
             }
-            return View(product);
+            return RedirectToAction("Index", "Product");
         }
 
 
@@ -278,6 +321,30 @@ namespace test_dotnet_app_mvc.Controllers
                 product.DESCRIPTION = product.DESCRIPTION;
                 product.TYPE = p.TYPE;
                 product.ORDER = p.ORDER;
+                product.NAME = p.NAME;
+                product.ADULT_PRICE = p.ADULT_PRICE;
+                product.AREA = p.AREA;
+                product.ATTRACTIONS = p.ATTRACTIONS;
+                product.BOOK_BY_DATE = p.BOOK_BY_DATE;
+                product.CHILD_PRICE = p.CHILD_PRICE;
+                product.COUNTRY = p.COUNTRY;
+                product.DAYS = p.DAYS;
+                product.DEPARTURE = p.DEPARTURE;
+                product.GROUP_DATE = p.GROUP_DATE;
+                product.GROUP_NUMBER = p.GROUP_NUMBER;
+                product.HOTEL = p.HOTEL;
+                product.IMAGEURLS = p.IMAGEURLS;
+                product.LEAVE_GROUP_CITY = p.LEAVE_GROUP_CITY;
+                product.MEALS = p.MEALS;
+                product.NIGHTS = p.NIGHTS;
+                product.PRICE_EXCLUSIVE = p.PRICE_EXCLUSIVE;
+                product.PRICE_INCLUSIVE = p.PRICE_INCLUSIVE;
+                product.REASON = p.REASON;
+                product.REFUND_CHANGE_DESCRIPTION = p.REFUND_CHANGE_DESCRIPTION;
+                product.REMARK = p.REMARK;
+                product.SENIOR_PRICE = p.SENIOR_PRICE;
+                product.TRANSPORTATION = p.TRANSPORTATION;
+                
 
                 products.Add(product);
             }
@@ -294,6 +361,53 @@ namespace test_dotnet_app_mvc.Controllers
             return View(allInfor);
             
         }
+
+        //public ActionResult UploadImage(HttpPostedFileBase imageFile)
+        //{
+        //    if (imageFile != null && imageFile.ContentLength > 0)
+        //    {
+        //        // get the file name
+        //        string fileName = Path.GetFileName(imageFile.FileName);
+
+        //        // save the file to the server
+        //        string path = Path.Combine(Server.MapPath("~/img/"), fileName);
+        //        imageFile.SaveAs(path);
+
+        //        // redirect back to the index action
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    // if the file was not uploaded, return an error message
+        //    ViewBag.ErrorMessage = "Please choose a file to upload.";
+        //    return View("Index");
+        //}
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(IFormFile imageFile)
+        {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                // get the file name
+                string fileName = Path.GetFileName(imageFile.FileName);
+
+                // save the file to the server
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", fileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await imageFile.CopyToAsync(stream);
+                }
+                ViewBag.url = path;
+                // redirect back to the index action
+                return RedirectToAction("CreateProduct", "Admin");
+            }
+
+            // if the file was not uploaded, return an error message
+            ViewBag.ErrorMessage = "Please choose a file to upload.";
+            return View("Index");
+        }
+    
     }
 
 }
